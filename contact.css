@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Full-page background styling */
+body {
+    background: url('images/banner.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+/* Section and container styling */
+section {
+    padding: 100px 0;
+}
+.max-width {
+    max-width: 1300px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    background: transparent;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky {
+    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a {
+    margin-right: auto;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span {
+    color: crimson;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span {
+    color: #fff;
+}
+.navbar .menu {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    gap: 40px;
+}
+.navbar .menu li {
+    display: inline-block;
+}
+.navbar .menu li a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover {
+    color: crimson;
+}
+.navbar.sticky .menu li a {
+    color: #000;
+}
+
+/* Hide the hamburger menu icon on desktop */
+.menu-btn {
+    display: none;
+}
+
+/* Show hamburger menu on smaller screens */
+@media (max-width: 768px) {
+    .navbar .menu {
+        display: none; /* Hide normal menu */
+    }
+    .menu-btn {
+        display: block; /* Show hamburger on mobile */
+        color: #fff;
+        font-size: 23px;
+        cursor: pointer;
+    }
+}
+
+/* Contact Section */
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 100px 20px;
+    flex-wrap: wrap;
+}
+
+/* Left Side (Contact Info) */
+.contact .left {
+    flex: 1;
+    color: #fff;
+    background: none;
+    padding: 20px;
+    margin-right: 20px; /* Adds some space between the info and the form */
+}
+
+.contact .left .text {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: crimson;
+}
+
+.contact .left p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.contact .icons {
+    margin-top: 20px;
+}
+
+.contact .icons .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact .icons .row i {
+    font-size: 24px;
+    color: crimson;
+    width: 40px;
+}
+
+.contact .icons .info {
+    margin-left: 10px;
+}
+
+.contact .icons .info .head {
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+}
+
+.contact .icons .info .sub-title {
+    color: #ccc;
+    font-size: 16px;
+}
+
+/* Right Side (Contact Form) */
+.contact .right {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px; /* Restricts form width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact form .fields {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.contact form .field {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.contact form .field.full-width {
+    width: 100%;
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+    border-color: crimson;
+    outline: none;
+}
+
+.contact form .textarea textarea {
+    resize: none;
+    height: 150px; /* Increased height for the message textarea */
+}
+
+.contact form .button-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact form .button-area button {
+    padding: 12px 36px;
+    background: crimson;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact form .button-area button:hover {
+    background: #fff;
+    color: crimson;
+    border: 1px solid crimson;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact .left,
+    .contact .right {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact .left {
+        margin-bottom: 20px;
+    }
+
+    .contact form {
+        max-width: 100%;
+    }
+}
